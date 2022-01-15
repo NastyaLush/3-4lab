@@ -12,6 +12,12 @@ public class OrdinaryWatch implements Watch{
     public Condition getCondition() {
         return condition;
     }
+    public Human getOwner(){
+        return owner;
+    }
+    public int getImpactResistance(){
+        return impactResistance;
+    }
     public void getHit(){
         if(Math.random() <= impactResistance/100) condition = Condition.FAULTY;
     }
