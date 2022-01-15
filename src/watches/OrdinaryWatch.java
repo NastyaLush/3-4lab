@@ -12,7 +12,7 @@ public class OrdinaryWatch implements Watch{
     public Condition getCondition() {
         return condition;
     }
-    public void crash(){
+    public void getHit(){
         if(Math.random() <= impactResistance/100) condition = Condition.FAULTY;
     }
 }

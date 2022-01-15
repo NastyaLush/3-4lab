@@ -13,9 +13,17 @@ public interface Watch {
         else throw new BrokenWatchesException("Упс! Часы сломаны и время не показывают!");
     }
     Condition getCondition();
-    void crash();
+    void getHit();
     public enum Condition{
-        SERVICEABLE,
-        FAULTY
+        SERVICEABLE("исправны"),
+        FAULTY("неисправны");
+
+        private String name;
+        Condition(String name){
+            this.name = name;
+        }
+        public String toString(){
+            return "Часы " + name;
+        }
     }
 }
