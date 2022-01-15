@@ -2,7 +2,8 @@ package factory;
 
 import peoples.Human;
 import watches.CasioGShock;
-
+// toString()!!!!!!!!
+// мб синголтон тоже
 public class CasioFactory {
     private Human[] employees;
     private int numberOfEmployees = 0;

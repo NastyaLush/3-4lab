@@ -1,5 +1,5 @@
 package peoples;
 
-public class FatherIbe {
+public class FatherIbe extends Human {
     // подарить часы
 }
