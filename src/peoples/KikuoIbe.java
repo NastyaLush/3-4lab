@@ -19,7 +19,7 @@ public class KikuoIbe extends Human implements Engineer {
     public String getAJobICasioFactory(CasioFactory casioFactory){
 
         for (Human employee: casioFactory.getEmployees()) {
-            if (employee == this) {
+            if (employee.equals(this)) {
                 return name + "уже работает на фабрике Casio";
             }
         }
