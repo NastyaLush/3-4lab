@@ -6,10 +6,10 @@ import watches.Watch;
 
 public abstract class Human extends Exceptions {
     // воображение, метод смотреть
-    private String name=null;
-    private String moving=null;
-    private String gifts=null;
-    protected String condition=null;
+    private String name= new String();
+    private String moving= new String();
+    // private String gifts=null;
+    protected String condition= new String();
 
     Human(){}
     Human(String name){this.name=name;}
@@ -61,9 +61,9 @@ public abstract class Human extends Exceptions {
         return moving;
     }
 
-    public String getGifts() {
-        return gifts;
-    }
+   // public String getGifts() {
+     //   return gifts;
+   // }
 
     public String getCondition() {
         return condition;
@@ -71,8 +71,6 @@ public abstract class Human extends Exceptions {
 
     @Override
     public String toString() {
-        return "Human:name= " + name +
-                ", moving= " + moving +
-                ", condition=" + condition ;
+        return  name + moving + condition ;
     }
 }
