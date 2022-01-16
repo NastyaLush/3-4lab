@@ -7,15 +7,19 @@ public abstract class ResearchHuman extends Human implements Engineer {
     private double imoganation;
 
     public ResearchHuman(){}
+
+    public void setImoganation(double imoganation) {
+        this.imoganation = imoganation;
+    }
     public ResearchHuman(String name){super(name);this.name=name;}
-    public String researching(String mindProcess){
+    public String researching(){
         if (condition.isEmpty()) {
-            condition = name + " в поиске" + mindProcess;
-            return name + " в поиске" + mindProcess;
+            condition = name + " в поиске решений";
+            return name + " в поиске решений";
         }
         else {
-            condition = name + " в поиске" + mindProcess;
-            return "состояние изменилось:"+name + " в поиске" + mindProcess;
+            condition = name + " в поиске решений";
+            return "состояние изменилось: " + name + " в поиске решений";
         }
     }
     public String createInnovation(String innovation){
@@ -25,10 +29,10 @@ public abstract class ResearchHuman extends Human implements Engineer {
     }
 
     public  String watch(String object, String thoughts){
-        if(Math.random()<imoganation){
+        if(Math.random()<=imoganation){
             return name+" наблюдал(и) за"+ object+" и эти мысли помогли им создать что-то новое: "+thoughts;
         }
-        else return name+"не повезло, новых идей не возникло";
+        else return name+ " не повезло, новых идей не возникло";
     }
 
     public String[] getInnovations() {

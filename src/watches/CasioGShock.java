@@ -34,6 +34,7 @@ public class CasioGShock {
             this.releaseYear = releaseYear;
             isReleased = true;
             this.creator = creator;
+            System.out.println("Была изобретена модель часов Casio G-Shock. Изобретатель: " + creator.toString() + ". Год: " + releaseYear);
         }
         else throw new AlreadyRealesedWatchException("Упс! Такая модель уже существует");
     }
