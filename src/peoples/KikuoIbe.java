@@ -10,20 +10,19 @@ public class KikuoIbe extends Human implements Engineer {
     private KikuoIbe(){
         super(name);
     };
-    private KikuoIbe holder = null;
-    public KikuoIbe getInstance(){
-        if(holder == null) holder= new KikuoIbe();
+    private static KikuoIbe holder;
+    public static KikuoIbe getInstance(){
+        if(holder == null) holder = new KikuoIbe();
         return holder;
     }
 // ловить ошибку если уже работает
-    public String worksAtCasioFactory(CasioFactory casioFactory){
-        casioFactory.addEmployee(KikuoIbe.this);
-        return name+"работает на фабрике Casio";
+    public String getAJobICasioFactory(CasioFactory casioFactory){
+        casioFactory.addEmployee(this);
+        return name + " теперь работает на фабрике Casio";
     }
     // ловить ошибку если уже создана команда
-    public String createResearchTeam(String name, String purpose){
-        ResearchTeam researchTeam = new ResearchTeam(name,purpose);
-        return "создана новая команда "+this.name+" , название: "+ name+". Ее цель: "+purpose;
+    public ResearchTeam createResearchTeam(String name, String purpose){
+        return new ResearchTeam(name, purpose);
     }
     //состояние должно меняться симвализировать о смене, если не пусто!
     public String researching(String mindProcess){

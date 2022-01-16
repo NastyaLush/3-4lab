@@ -43,10 +43,10 @@ public abstract class Human extends Exceptions {
          return this.name + " уронил(а) часы и они получили удар";
     }
 
-    public String giveAGift(Human recipient, String gift){
+    /*public String giveAGift(Human recipient, String gift){
         gifts=gift;
         return this.name+" подарил"+ recipient.name +"подарок: "+ gift;
-    }
+    }*/
     // ошибка если кондитион не пуст пусть говорит о смене состояния
     public String watch(String object){
         condition="смотрит на"+ object;

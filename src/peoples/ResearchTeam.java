@@ -1,8 +1,8 @@
 package peoples;
 
 public class ResearchTeam extends Human implements Engineer {
-    private String name="Группа исследователей";
-    private String purpose="нет";
+    private String name = "Группа исследователей";
+    private String purpose = "Цели нет";
     private int numbers;
     private String[] innovations ;
     private int numberOfInnovations=0;
