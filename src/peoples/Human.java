@@ -11,20 +11,25 @@ public abstract class Human extends Exceptions {
 
     Human(){}
     Human(String name){this.name=name;}
-    public String goToWork( String placeOfWork ){
+    enum Locaton{
+        CASIO_FACTORY,
+        HOME,
+        ITMO
+    }
+    public String goToWork( Locaton locaton ){
     try {
         moveException(getMoving());
         moving = "ходить на работу";
-        return this.name + " ходит на работу в" + placeOfWork;
+        return this.name + " ходит на работу в" + locaton;
     }
     catch (MovingException e){
         return e.getMessage()+ "на работу";
     }
     }
-    public String comeToWork(String placeOfWork){
+    public String comeToWork(Locaton locaton){
         if(moving.equals("ходить на работу")){
-            moving="на работе "+ placeOfWork;
-            return this.name + "на работе "+ placeOfWork;
+            moving="на работе "+ locaton;
+            return this.name + "на работе "+ locaton;
         }
         else {
             return "для того чтобы прийти на работу нужно сначала выйти";
