@@ -4,7 +4,7 @@ import factory.CasioFactory;
 import watches.OrdinaryWatch;
 
 public abstract class Human  {
-    public String name= new String();
+    protected String name= new String();
     private String moving= new String();
     private String job;
     protected String condition= new String();
@@ -23,24 +23,17 @@ public abstract class Human  {
         }
     }
     public void getAJobICasioFactory(CasioFactory casioFactory){
-
-        /*for (Human employee: casioFactory.getEmployees()) {
-            if (employee.equals(this)) {
-                return name + "уже работает на фабрике Casio";
-            }
-        }*/
         casioFactory.addEmployee(Human.this);
         job= Location.CASIO_FACTORY.toString();
-        //return name + " теперь работает на фабрике Casio";
     }
     public String goToWork( ){
     try {
         moveException(getMoving());
         moving = "ходить на работу";
-        return this.name + " ходит на работу в" + job;
+        return this.name + " ходит на работу в " + job;
     }
     catch (MovingException e){
-        return e.getMessage()+ "на работу";
+        return e.getMessage()+ " на работу";
     }
     }
     public String comeToWork(Location locaton){
@@ -54,7 +47,7 @@ public abstract class Human  {
     }
     public String dropWatch(OrdinaryWatch watch){
          watch.getHit();
-         return this.name + " уронил(а) часы и они получили удар";
+         return this.name + " уронил часы ";
     }
 
 
@@ -69,7 +62,7 @@ public abstract class Human  {
     }
 
     public void moveException(String s) throws MovingException{
-        if(s.isEmpty()){
+        if(s.isEmpty()==false){
             throw new MovingException("Объект уже находится в пути");
         }
     }
@@ -92,9 +85,8 @@ public abstract class Human  {
     public void setName(String name) {
         this.name = name;
     }
-
     @Override
     public String toString() {
-        return  name + moving + condition ;
+        return  name;
     }
 }

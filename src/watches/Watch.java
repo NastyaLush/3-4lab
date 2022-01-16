@@ -3,6 +3,11 @@ package watches;
 import exception.BrokenWatchesException;
 
 public interface Watch {
+    Condition getCondition();
+    int getImpactResistance();
+    void changeCondition(Condition condition);
+
+
     default String showTime() throws BrokenWatchesException {
         if(this.getCondition().equals(Condition.SERVICEABLE)) {
             class Time {
@@ -16,12 +21,11 @@ public interface Watch {
         }
         else throw new BrokenWatchesException("Упс! Часы сломаны и время не показывают!");
     }
-    Condition getCondition();
-    int getImpactResistance();
-    void changeCondition(Condition condition);
+
     default void getHit(){
         if(Math.random() >= this.getImpactResistance()/100) this.changeCondition(Condition.FAULTY);
     }
+
     enum Condition{
         SERVICEABLE("исправны"),
         FAULTY("неисправны");

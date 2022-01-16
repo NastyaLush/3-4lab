@@ -2,9 +2,7 @@ package peoples;
 
 public class KikuoIbe extends ResearchHuman implements Engineer {
     //вынести методы в интерфейс?
-    private static final String name = "Кикуо Ибэ";
     private String[] innovations;
-    private double imoganation=0.9;
     private int numberOfInnovations = 0;
     public static ProjectTeamTough projectTeamTough;
     private static KikuoIbe holder;
@@ -14,7 +12,7 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
         return holder;
 
     }
-    private KikuoIbe(){super("Кикуо Ибэ");}
+    private KikuoIbe(){super("Кикуо Ибэ"); setImoganation(0.9);}
     public String createProjectTeam() {
         projectTeamTough = new ProjectTeamTough();
         projectTeamTough.setPurpose("Цель команды - создать идеально прочные часы: выдерживающие сильные удары, давление воды, перегрузки — и при этом долговечные");

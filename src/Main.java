@@ -23,7 +23,7 @@ public class Main {
         System.out.println(kikuoIbe.projectTeamTough.getPurpose());
 
         System.out.println(kikuoIbe.projectTeamTough.researching());
-        System.out.println(kikuoIbe.projectTeamTough.watch("резиновый мяч", "амортизация корпуса часов"));
+        System.out.println(kikuoIbe.watch("резиновый мяч", "амортизация корпуса часов"));
 
 
         CasioGShock firstModelCasio = new CasioGShock(kikuoIbe, 1983);

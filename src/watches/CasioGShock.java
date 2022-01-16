@@ -12,8 +12,7 @@ public class CasioGShock {
     private static Engineer creator;
     private static boolean isReleased = false;
 
-    private CasioGShock(){
-    }
+    private CasioGShock(){}
     public int getImpactResistance(){
         return impactResistance;
     }
