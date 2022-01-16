@@ -17,9 +17,9 @@ public class KikuoIbe extends Human implements Engineer {
     }
 
 
-    public ResearchTeam createResearchTeam(String name, String purpose){
+    /*public ResearchTeam createResearchTeam(String name, String purpose){
         return new ResearchTeam(name, purpose);
-    }
+    }*/
 
     public String researching(String mindProcess){
         if (condition.isEmpty()) {
@@ -43,6 +43,18 @@ public class KikuoIbe extends Human implements Engineer {
         numberOfInnovations++;
         return "создан"+ innovation;
     }
+
+    public class ProjectTeamTough extends ResearchTeam{
+        private String name="ProjectTeamTough";
+        private String purpose=" создать идеально прочные часы: выдерживающие сильные удары, давление воды, перегрузки — и при этом долговечные";
+        private ProjectTeamTough(){}
+        private ProjectTeamTough holder;
+        public ProjectTeamTough getInstance(){
+            if(holder == null) holder = new ProjectTeamTough();
+            return holder;
+        }
+    }
+
 
     public String[] getInnovations() {
         return innovations;

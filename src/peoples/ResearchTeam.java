@@ -1,12 +1,12 @@
 package peoples;
 
-public class ResearchTeam extends Human implements Engineer {
+public abstract class ResearchTeam extends Human implements Engineer {
     private String name = "Группа исследователей";
     private String purpose = "Цели нет";
     private int numbers;
     private String[] innovations ;
     private int numberOfInnovations=0;
-    ResearchTeam(){}
+    public ResearchTeam(){}
     ResearchTeam(String name){
         this.name=name;
     }
