@@ -15,6 +15,9 @@ public class OrdinaryWatch implements Watch{
     public Human getOwner(){
         return owner;
     }
+    public void changeOwner(Human newOwner){
+        this.owner = newOwner;
+    }
     public int getImpactResistance(){
         return impactResistance;
     }
