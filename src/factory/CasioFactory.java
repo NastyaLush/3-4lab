@@ -37,14 +37,13 @@ public class CasioFactory implements Factory, CasioGShockProduction{
     public CasioGShock makeCasioGShock(){
         return CasioGShock.createCasioGShockInstance();
     }
+
     public String toString(){
         return "Фабрика Casio";
     }
-
     public Human[] getEmployees() {
         return employees;
     }
-
     public int getNumberOfEmployees() {
         return numberOfEmployees;
     }

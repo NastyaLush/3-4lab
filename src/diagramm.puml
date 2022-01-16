@@ -55,9 +55,9 @@ getEmployees(): Human[]
 }
 package peoples{
 interface Engineer{
-+ researching(String mindprocess): String
-+ watch(String object, String thoughts): String
-+ createInnovation(String innovation): String
+ researching(String mindprocess): String
+ watch(String object, String thoughts): String
+ createInnovation(String innovation): String
 }
 class FatherIbe extends Human {
 - objectHolder: FatherIbe
@@ -66,7 +66,7 @@ class FatherIbe extends Human {
 + giftWatch(OrdinaryWatch watch, Human toWho): void
 }
  abstract class Human  {
- - name: String
+ # name: String
  - moving: String
  - job: String
  # condition: String
@@ -78,6 +78,7 @@ class FatherIbe extends Human {
 + comeToWork(Location location): String
 + dropWatch(OrdinaryWatch watch): String
 + watch(String object): String
++ moveException(String s) throws MovingException
 
 + getName(): String
 + getMoving(): String
@@ -100,24 +101,34 @@ abstract class ResearchHuman extends Human implements Engineer{
 - numbeerOfInnovation: int
 - imoganation: double
 
-+researching(String mindProcess): String
++ ResearchHuman()
++ ResearchHuman(String name)
+
++ researching(String mindProcess): String
 + createInnovation(String innovation): String
 + watch(String object, String thoughts): String
 + getInnovations(): String[]
 + getName(): String
 + getNumberOfInnovations(): int
++ setImoganation(double imoganation): void
 }
 
 class KikuoIbe extends ResearchHuman implements Engineer {
+
++ projectTeamTough: ProjectTeamTough
+- holder: KikuoIbe
+
 - KikuoIbe()
-- hilder: KikuoIbe
-- getInstance(): KikuoIbe
++ getInstance(): KikuoIbe
++ createProjectTeam(): String
 }
 class ProjectTeamTough extends ResearchHuman{
 - purpose: String
-- getInstance(): ProjectTeamTough
 - ProjectTeamTough()
+
++ setPurpose(String purpose): void
 + getPurpose(): String
++ toString(): String
 }
 KikuoIbe<..ProjectTeamTough
 }

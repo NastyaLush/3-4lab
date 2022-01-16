@@ -1,8 +1,7 @@
 package peoples;
 
 public class KikuoIbe extends ResearchHuman implements Engineer {
-    private String[] innovations;
-    private int numberOfInnovations = 0;
+
     public static ProjectTeamTough projectTeamTough;
     private static KikuoIbe holder;
 
@@ -19,11 +18,11 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
     }
 
     public class ProjectTeamTough extends ResearchHuman{
-        private final static String name="ProjectTeamTough";
+
         private String purpose;
 
         private ProjectTeamTough(){
-            super(name);
+            super("ProjectTeamTough");
             setImoganation(0.68);
         }
         public void setPurpose(String purpose){
