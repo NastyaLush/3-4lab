@@ -5,16 +5,12 @@ import watches.OrdinaryWatch;
 import watches.Watch;
 
 public abstract class Human extends Exceptions {
-    // воображение, метод смотреть
     private String name= new String();
     private String moving= new String();
-    // private String gifts=null;
     protected String condition= new String();
 
     Human(){}
     Human(String name){this.name=name;}
-
-    // может сможет принимать фабрику как класс
     public String goToWork( String placeOfWork ){
     try {
         moveException(getMoving());
@@ -34,23 +30,20 @@ public abstract class Human extends Exceptions {
             return "для того чтобы прийти на работу нужно сначала выйти";
         }
     }
-// может часы наследуются от пасивных обьектов и тогда в аргументе будет принимать их
-    // просто надо же как-то сказать что часы уронили и они разбились
-    // мб метод часам падать а там и повреждения будут а я его просто вызову
-    // ронять можно что угодно надо переделать мб абстрактный класс по пусть пока так
     public String dropWatch(OrdinaryWatch watch){
          watch.getHit();
          return this.name + " уронил(а) часы и они получили удар";
     }
 
-    /*public String giveAGift(Human recipient, String gift){
-        gifts=gift;
-        return this.name+" подарил"+ recipient.name +"подарок: "+ gift;
-    }*/
-    // ошибка если кондитион не пуст пусть говорит о смене состояния
+
     public String watch(String object){
+        if(condition.isEmpty()){
         condition="смотрит на"+ object;
-        return condition;
+        return condition;}
+        else {
+            condition="смотрит на"+ object;
+            return "состояние изменилось, теперь: "+condition;
+        }
     }
 
     public String getName() {
@@ -60,10 +53,6 @@ public abstract class Human extends Exceptions {
     public String getMoving() {
         return moving;
     }
-
-   // public String getGifts() {
-     //   return gifts;
-   // }
 
     public String getCondition() {
         return condition;
