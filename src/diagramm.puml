@@ -1,0 +1,47 @@
+@startuml
+package exception {
+class AlreadyRealesedWatchException{
+- message: String
+
++AlreadyRealesedWatchException(String message)
++getMessage():String
+}
+RunTimeException<|--AlreadyRealesedWatchException
+class BrokenWatchesException{
+- message: String
+
++BrokenWatchesException(String message)
++getMessage():String
+}
+RunTimeException<|--BrokenWatchesException
+class NotRealesedWatchModelException{
+- message: String
+
++NotRealesedWatchModelException(String message)
++getMessage():String
+}
+RunTimeException<|--NotRealesedWatchModelException
+class MovingException{
++MovingException(String massage)
+}
+Exception<|--MovingException
+
+class Exceptions{
++ moveException(String s) throws MovingException: void
+}
+}
+package factory{
+class CasioFactory implements Factory, CasioGShockProduction{
+- employees: Human[]
+- numberOfEmployees: int
++ addEmployee(Human employee): void
++ makeCasioGShock(): CasioFactory
+
++ toString(): String
++ getEmployees(): Human[]
++ getNumbeerOfEmployees(): int
+}
+
+}
+
+@enduml
