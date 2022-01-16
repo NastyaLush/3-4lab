@@ -3,7 +3,7 @@ package factory;
 import peoples.Human;
 import watches.CasioGShock;
 
-public class CasioFactory {
+public class CasioFactory implements Factory, CasioGShockProduction{
     private Human[] employees;
     private int numberOfEmployees = 0;
     public void addEmployee(Human employee){
