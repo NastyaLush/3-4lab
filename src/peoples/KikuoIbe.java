@@ -20,16 +20,20 @@ public class KikuoIbe extends Human implements Engineer {
         casioFactory.addEmployee(this);
         return name + " теперь работает на фабрике Casio";
     }
-    // ловить ошибку если уже создана команда
     public ResearchTeam createResearchTeam(String name, String purpose){
         return new ResearchTeam(name, purpose);
     }
-    //состояние должно меняться симвализировать о смене, если не пусто!
+
     public String researching(String mindProcess){
-        condition=name+" в поиске"+mindProcess;
-        return name+" в поиске"+mindProcess;
+        if (condition.isEmpty()) {
+            condition = name + " в поиске" + mindProcess;
+            return name + " в поиске" + mindProcess;
+        }
+        else {
+            condition = name + " в поиске" + mindProcess;
+            return "состояние изменилось:"+name + " в поиске" + mindProcess;
+        }
     }
-    //должно отразиться изобретение, мб массив изобретений????
     public String watch(String object, String innovation){
         if(Math.random()<0.95){
             createInnovation(innovation);

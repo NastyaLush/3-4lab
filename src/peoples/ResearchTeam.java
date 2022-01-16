@@ -18,17 +18,23 @@ public class ResearchTeam extends Human implements Engineer {
         this.name=name;
         this.purpose=purpose;
     }
-    // дважды нельзя быть в поиске обработка ошибок
+
     public String researching(String mindProcess){
-        condition=name+" в поиске";
-        return name+" в поиске";
+        if (condition.isEmpty()) {
+            condition = name + " в поиске" + mindProcess;
+            return name + " в поиске" + mindProcess;
+        }
+        else {
+            condition = name + " в поиске" + mindProcess;
+            return "состояние изменилось:"+name + " в поиске" + mindProcess;
+        }
     }
     public String createInnovation(String innovation){
         innovations[numberOfInnovations]=innovation;
         numberOfInnovations++;
         return "создан"+ innovation;
     }
-// то что они придумали должно как-то отражаться
+
     public  String watch(String object, String thoughts){
         if(Math.random()<0.78){
             return name+" наблюдали за"+ object+" и эти мысли помогли им создать что-то новое: "+thoughts;
