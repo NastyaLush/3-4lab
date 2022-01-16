@@ -6,6 +6,8 @@ public abstract class ResearchHuman extends Human implements Engineer {
     private int numberOfInnovations=0;
     private double imoganation;
 
+    public ResearchHuman(){}
+    public ResearchHuman(String name){super(name);this.name=name;}
     public String researching(String mindProcess){
         if (condition.isEmpty()) {
             condition = name + " в поиске" + mindProcess;
@@ -36,6 +38,11 @@ public abstract class ResearchHuman extends Human implements Engineer {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getNumberOfInnovations() {

@@ -4,13 +4,13 @@ import factory.CasioFactory;
 import watches.OrdinaryWatch;
 
 public abstract class Human  {
-    private String name= new String();
+    public String name= new String();
     private String moving= new String();
     private String job;
     protected String condition= new String();
 
     public Human(){}
-    public Human(String name){this.name=name;}
+    public Human(String name){ this.name=name;}
     enum Location {
         CASIO_FACTORY("Casio factory"),
         HOME("home"),
@@ -87,6 +87,10 @@ public abstract class Human  {
 
     public String getJob() {
         return job;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
