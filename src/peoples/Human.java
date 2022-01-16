@@ -1,10 +1,9 @@
 package peoples;
-import exception.Exceptions;
 import exception.MovingException;
 import factory.CasioFactory;
 import watches.OrdinaryWatch;
 
-public abstract class Human extends Exceptions {
+public abstract class Human  {
     private String name= new String();
     private String moving= new String();
     private String job;
@@ -69,6 +68,11 @@ public abstract class Human extends Exceptions {
         }
     }
 
+    public void moveException(String s) throws MovingException{
+        if(s.isEmpty()){
+            throw new MovingException("Объект уже находится в пути");
+        }
+    }
     public String getName() {
         return name;
     }

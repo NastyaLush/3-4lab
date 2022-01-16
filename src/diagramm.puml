@@ -31,9 +31,7 @@ class EmployeesException extends RunTimeException{
 
 +getMessage():String
 }
-class Exceptions{
-+ moveException(String s) throws MovingException: void
-}
+
 }
 package factory{
 class CasioFactory implements Factory, CasioGShockProduction{
@@ -67,7 +65,7 @@ class FatherIbe extends Human {
 + createFatherIbe(): FatherIbe
 + giftWatch(OrdinaryWatch watch, Human toWho): void
 }
- abstract class Human extends Exceptions {
+ abstract class Human  {
  - name: String
  - moving: String
  - job: String
