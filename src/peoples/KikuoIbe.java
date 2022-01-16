@@ -20,10 +20,9 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
 
 
     public class ProjectTeamTough extends ResearchHuman{
-        private String name="ProjectTeamTough";
         private String purpose=" создать идеально прочные часы: выдерживающие сильные удары, давление воды, перегрузки — и при этом долговечные";
         private double imoganation=0.68;
-        private ProjectTeamTough(){}
+        private ProjectTeamTough(){super("ProjectTeamTough");}
         private ProjectTeamTough holder;
         public ProjectTeamTough getInstance(){
             if(holder == null) holder = new ProjectTeamTough();
