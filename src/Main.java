@@ -14,6 +14,7 @@ public class Main {
         kikuoIbe.getAJobICasioFactory(casioFactory);
         System.out.println(kikuoIbe.goToWork());
         System.out.println(kikuoIbe.dropWatch(ordinaryWatch));
+
         fatherIbe.giftWatch(ordinaryWatch, kikuoIbe);
 
 
