@@ -5,7 +5,7 @@ import peoples.Human;
 public class OrdinaryWatch implements Watch{
     private Human owner;
     private Condition condition = Condition.SERVICEABLE;
-    private final static int impactResistance = 50;
+    private final static int impactResistance = 30;
     public OrdinaryWatch(Human owner){
         this.owner = owner;
     }

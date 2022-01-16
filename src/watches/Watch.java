@@ -15,7 +15,7 @@ public interface Watch {
     int getImpactResistance();
     void changeCondition(Condition condition);
     default void getHit(){
-        if(Math.random() <= this.getImpactResistance()/100) this.changeCondition(Condition.FAULTY);
+        if(Math.random() >= this.getImpactResistance()/100) this.changeCondition(Condition.FAULTY);
     }
     enum Condition{
         SERVICEABLE("исправны"),

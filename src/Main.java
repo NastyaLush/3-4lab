@@ -9,20 +9,15 @@ public class Main {
 
         CasioFactory casioFactory = new CasioFactory();
         KikuoIbe kikuoIbe = KikuoIbe.getInstance();
-        OrdinaryWatch ordinaryWatch= new OrdinaryWatch(kikuoIbe);
         FatherIbe fatherIbe = FatherIbe.createFatherIbe();
+        OrdinaryWatch ordinaryWatch= new OrdinaryWatch(fatherIbe);
+        fatherIbe.giftWatch(ordinaryWatch, kikuoIbe);
+
         kikuoIbe.getAJobICasioFactory(casioFactory);
         System.out.println(kikuoIbe.goToWork());
         System.out.println(kikuoIbe.dropWatch(ordinaryWatch));
-        fatherIbe.giftWatch(ordinaryWatch, kikuoIbe);
+        System.out.println(ordinaryWatch.getCondition());
 
-
-        System.out.println(casioFactory.getNumberOfEmployees());
-        casioFactory.deleteEmployee(kikuoIbe);
-        System.out.println(casioFactory.getNumberOfEmployees());
-        casioFactory.deleteEmployee(kikuoIbe);
-        System.out.println(casioFactory.getNumberOfEmployees());
-
-
+        
     }
 }
