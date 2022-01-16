@@ -25,7 +25,12 @@ class MovingException{
 +MovingException(String massage)
 }
 Exception<|--MovingException
+class EmployeesException extends RunTimeException{
+-message: String
++EmployeesException(String message)
 
++getMessage():String
+}
 class Exceptions{
 + moveException(String s) throws MovingException: void
 }
@@ -35,13 +40,135 @@ class CasioFactory implements Factory, CasioGShockProduction{
 - employees: Human[]
 - numberOfEmployees: int
 + addEmployee(Human employee): void
++ deleteEmloyee(Human employee): void
 + makeCasioGShock(): CasioFactory
 
 + toString(): String
 + getEmployees(): Human[]
 + getNumbeerOfEmployees(): int
 }
+interface CasioGShockProduction{
+makeCasioGShock(): CasioGShock
+}
+interface Factory{
+getNumbeerOfEmployees(): int
+getEmployees(): Human[]
+}
+}
+package peoples{
+interface Engineer{
++ researching(String mindprocess): String
++ watch(String object, String thoughts): String
++ createInnovation(String innovation): String
+}
+class FatherIbe extends Human {
+- objectHolder: FatherIbe
+- FatherIbe()
++ createFatherIbe(): FatherIbe
++ giftWatch(OrdinaryWatch watch, Human toWho): void
+}
+ abstract class Human extends Exceptions {
+ - name: String
+ - moving: String
+ - job: String
+ # condition: String
 
++ Human()
++ Human(String name)
++ getAJobICasioFactory(CasioFactory casioFactory): void
++ goToWork(): String
++ comeToWork(Location location): String
++ dropWatch(OrdinaryWatch watch): String
++ watch(String object): String
+
++ getName(): String
++ getMoving(): String
++ getCondition(): String
++ getJob(): String
+
++ toString(): String
+}
+Human<-- Location
+enum Location{
+- name: String
+Location(String name)
++ toString(): String
+CASIO_FACTORY,
+HOME,
+ITMO
+}
+abstract class ResearchHuman extends Human implements Engineer{
+- innovations: String[]
+- numbeerOfInnovation: int
+- imoganation: double
+
++researching(String mindProcess): String
++ createInnovation(String innovation): String
++ watch(String object, String thoughts): String
++ getInnovations(): String[]
++ getName(): String
++ getNumberOfInnovations(): int
 }
 
+class KikuoIbe extends ResearchHuman implements Engineer {
+- KikuoIbe()
+- hilder: KikuoIbe
+- getInstance(): KikuoIbe
+}
+class ProjectTeamTough extends ResearchHuman{
+- purpose: String
+- getInstance(): ProjectTeamTough
+- ProjectTeamTough()
++ getPurpose(): String
+}
+KikuoIbe<..ProjectTeamTough
+}
+
+package watches{
+interface Watch {
+showTime() throws BrokenWatchesException: String
+getCondition(): Condition
+getImpactResistance(): int
+changeCondition(Condition condition): void
+getHit(): void
+}
+enum Condition{
+ SERVICEABLE,
+ FAULTY
+ - name: String
+ Condition(String name)
+ + toString(): String
+}
+Watch<-- Condition
+class OrdinaryWatch implements Watch{
+- owner: Human
+- condition: Condition
+- impactResistance: int
++ OrdinaryWatch(Human owner)
++ getCondition(): Condition
++ getOwner(): Human
++ changeOwner(Human newOwner): void
++ getImpactResistance(): int
++ changeCondition(Condition condition): void
+}
+
+class CasioGShock {
+- condition: Watch.Condition
+- impactResistance: int
+- releaseYear: int
+- creator: Engineer
+- isReleased: boolean
+
+-CasioGShock()
+
++ getImpactResistance(): int
++ getCondition(): Watch.Condition
++ getReleaseYear(): int
++ getCreator(): Engineer
++ getHit(): void
++ CasioGShock(Engineer creator, int releaseYear) throws AlreadyRealesedWatchException
++ CasioGShock createCasioGShockInstance() throws NotRealesedWatchModelException
++ toString(): String
+}
+}
 @enduml

@@ -10,8 +10,8 @@ public abstract class Human extends Exceptions {
     private String job;
     protected String condition= new String();
 
-    Human(){}
-    Human(String name){this.name=name;}
+    public Human(){}
+    public Human(String name){this.name=name;}
     enum Location {
         CASIO_FACTORY("Casio factory"),
         HOME("home"),

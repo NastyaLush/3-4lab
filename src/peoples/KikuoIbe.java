@@ -28,11 +28,6 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
             return holder;
         }
 
-        @Override
-        public String getName() {
-            return name;
-        }
-
         public String getPurpose() {
             return purpose;
         }
