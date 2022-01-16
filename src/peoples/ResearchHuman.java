@@ -32,4 +32,13 @@ public abstract class ResearchHuman extends Human implements Engineer {
     public String[] getInnovations() {
         return innovations;
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public int getNumberOfInnovations() {
+        return numberOfInnovations;
+    }
 }

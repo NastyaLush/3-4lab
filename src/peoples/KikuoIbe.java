@@ -8,6 +8,7 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
     private String[] innovations;
     private double imoganation=0.9;
     private int numberOfInnovations = 0;
+
     private KikuoIbe(){}
     private static KikuoIbe holder;
     public static KikuoIbe getInstance(){
@@ -35,10 +36,7 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
         public String getPurpose() {
             return purpose;
         }
+
     }
 
-
-    public String[] getInnovations() {
-        return innovations;
-    }
 }
