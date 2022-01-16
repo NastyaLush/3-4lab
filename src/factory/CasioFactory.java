@@ -4,11 +4,29 @@ import peoples.Human;
 import watches.CasioGShock;
 
 public class CasioFactory implements Factory, CasioGShockProduction{
-    private Human[] employees;
+    private Human[] employees = new Human[0];
     private int numberOfEmployees = 0;
     public void addEmployee(Human employee){
-        employees[numberOfEmployees] = employee;
+        Human[] newEmployees = new Human[numberOfEmployees+1];
+        for(int i = 0; i < numberOfEmployees; i++)
+            newEmployees[i] = employees[i];
+        newEmployees[numberOfEmployees] = employee;
+        employees = newEmployees;
         numberOfEmployees++;
+    }
+    public void deleteEmployee(Human employee){
+        Human[] newEmployees = new Human[numberOfEmployees-1];
+        int j = 0;
+        for(int i = 0; i < numberOfEmployees-1; i++){
+            if(employees[i].equals(employee)) {
+                j++;
+                continue;
+            }
+            newEmployees[i] = employees[j];
+            j++;
+        }
+        employees = newEmployees;
+        numberOfEmployees--;
     }
     public CasioGShock makeCasioGShock(){
         return CasioGShock.createCasioGShockInstance();

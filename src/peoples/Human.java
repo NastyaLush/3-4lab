@@ -3,7 +3,6 @@ import exception.Exceptions;
 import exception.MovingException;
 import factory.CasioFactory;
 import watches.OrdinaryWatch;
-import watches.Watch;
 
 public abstract class Human extends Exceptions {
     private String name= new String();
@@ -13,27 +12,27 @@ public abstract class Human extends Exceptions {
 
     Human(){}
     Human(String name){this.name=name;}
-    enum Locaton{
+    enum Location {
         CASIO_FACTORY("Casio factory"),
         HOME("home"),
         ITMO("ITMO");
 
         private String name;
-        Locaton(String name){this.name=name;}
+        Location(String name){this.name=name;}
         public String toString(){
             return name;
         }
     }
-    public String getAJobICasioFactory(CasioFactory casioFactory){
+    public void getAJobICasioFactory(CasioFactory casioFactory){
 
-        for (Human employee: casioFactory.getEmployees()) {
+        /*for (Human employee: casioFactory.getEmployees()) {
             if (employee.equals(this)) {
                 return name + "уже работает на фабрике Casio";
             }
-        }
-        casioFactory.addEmployee(this);
-        job=Locaton.CASIO_FACTORY.toString();
-        return name + " теперь работает на фабрике Casio";
+        }*/
+        casioFactory.addEmployee(Human.this);
+        job= Location.CASIO_FACTORY.toString();
+        //return name + " теперь работает на фабрике Casio";
     }
     public String goToWork( ){
     try {
@@ -45,7 +44,7 @@ public abstract class Human extends Exceptions {
         return e.getMessage()+ "на работу";
     }
     }
-    public String comeToWork(Locaton locaton){
+    public String comeToWork(Location locaton){
         if(moving.equals("ходить на работу")){
             moving="на работе "+ locaton;
             return this.name + "на работе "+ locaton;
