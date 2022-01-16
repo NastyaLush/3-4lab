@@ -4,16 +4,15 @@ import factory.CasioFactory;
 
 public class KikuoIbe extends Human implements Engineer {
     //вынести методы в интерфейс?
-    private final String name="Кикуо Ибэ";
-    private String[] innovations ;
-    private int numberOfInnovations=0;
-    // синголтон
-    private KikuoIbe(){};
-    private KikuoIbe holder=null;
+    private static final String name = "Кикуо Ибэ";
+    private String[] innovations;
+    private int numberOfInnovations = 0;
+    private KikuoIbe(){
+        super(name);
+    };
+    private KikuoIbe holder = null;
     public KikuoIbe getInstance(){
-        if(holder==null){
-            holder= new KikuoIbe();
-        }
+        if(holder == null) holder= new KikuoIbe();
         return holder;
     }
 // ловить ошибку если уже работает

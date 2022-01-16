@@ -41,4 +41,7 @@ public class CasioGShock {
         if(isReleased) return new CasioGShock();
         else throw new NotRealesedWatchModelException("Невозможно создать экземпляр");
     }
+    public String toString(){
+        return "Часы модели Casio GShock";
+    }
 }

@@ -21,7 +21,7 @@ public class OrdinaryWatch implements Watch{
     public int getImpactResistance(){
         return impactResistance;
     }
-    public void getHit(){
-        if(Math.random() <= impactResistance/100) condition = Condition.FAULTY;
+    public void changeCondition(Condition condition){
+        this.condition = condition;
     }
 }
