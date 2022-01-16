@@ -16,16 +16,7 @@ public class KikuoIbe extends Human implements Engineer {
         return holder;
     }
 
-    public String getAJobICasioFactory(CasioFactory casioFactory){
 
-        for (Human employee: casioFactory.getEmployees()) {
-            if (employee.equals(this)) {
-                return name + "уже работает на фабрике Casio";
-            }
-        }
-        casioFactory.addEmployee(this);
-        return name + " теперь работает на фабрике Casio";
-    }
     public ResearchTeam createResearchTeam(String name, String purpose){
         return new ResearchTeam(name, purpose);
     }

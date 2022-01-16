@@ -1,12 +1,14 @@
 package peoples;
 import exception.Exceptions;
 import exception.MovingException;
+import factory.CasioFactory;
 import watches.OrdinaryWatch;
 import watches.Watch;
 
 public abstract class Human extends Exceptions {
     private String name= new String();
     private String moving= new String();
+    private String job;
     protected String condition= new String();
 
     Human(){}
@@ -22,11 +24,22 @@ public abstract class Human extends Exceptions {
             return name;
         }
     }
-    public String goToWork( Locaton locaton ){
+    public String getAJobICasioFactory(CasioFactory casioFactory){
+
+        for (Human employee: casioFactory.getEmployees()) {
+            if (employee.equals(this)) {
+                return name + "уже работает на фабрике Casio";
+            }
+        }
+        casioFactory.addEmployee(this);
+        job=Locaton.CASIO_FACTORY.toString();
+        return name + " теперь работает на фабрике Casio";
+    }
+    public String goToWork( ){
     try {
         moveException(getMoving());
         moving = "ходить на работу";
-        return this.name + " ходит на работу в" + locaton;
+        return this.name + " ходит на работу в" + job;
     }
     catch (MovingException e){
         return e.getMessage()+ "на работу";
@@ -67,6 +80,10 @@ public abstract class Human extends Exceptions {
 
     public String getCondition() {
         return condition;
+    }
+
+    public String getJob() {
+        return job;
     }
 
     @Override
