@@ -5,11 +5,14 @@ import exception.BrokenWatchesException;
 public interface Watch {
     default String showTime() throws BrokenWatchesException {
         if(this.getCondition().equals(Condition.SERVICEABLE)) {
-            class Clock{
-            long currentMinute = (System.currentTimeMillis() / 60000) % 60;
-            long currentHour = (System.currentTimeMillis() / 3600000) % 24;}
-            Clock clock= new Clock();
-            return clock.currentHour + ":" + clock.currentMinute;
+            class Time {
+                private long currentMinute = (System.currentTimeMillis() / 60000) % 60;
+                private long currentHour = (System.currentTimeMillis() / 3600000) % 24;
+                public String getTime(){
+                    return this.currentHour + ":" + this.currentMinute;
+                }
+            }
+            return new Time().getTime();
         }
         else throw new BrokenWatchesException("Упс! Часы сломаны и время не показывают!");
     }
