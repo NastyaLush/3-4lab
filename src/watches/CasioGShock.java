@@ -29,7 +29,7 @@ public class CasioGShock {
         if(Math.random() <= impactResistance/100) condition = Watch.Condition.FAULTY;
     }
     public CasioGShock(Engineer creator, int releaseYear) throws AlreadyRealesedWatchException{
-        if(isReleased == false) {
+        if(!isReleased ) {
             this.releaseYear = releaseYear;
             isReleased = true;
             this.creator = creator;

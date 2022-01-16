@@ -1,7 +1,6 @@
 package peoples;
 
 public class KikuoIbe extends ResearchHuman implements Engineer {
-    //вынести методы в интерфейс?
     private String[] innovations;
     private int numberOfInnovations = 0;
     public static ProjectTeamTough projectTeamTough;

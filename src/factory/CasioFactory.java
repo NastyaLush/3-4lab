@@ -20,7 +20,7 @@ public class CasioFactory implements Factory, CasioGShockProduction{
         Human[] newEmployees = new Human[numberOfEmployees-1];
         int j = -1;
         for(Human e:employees){
-            if(employee.equals(employee)) j++;
+            if(e.equals(employee)) j++;
         }
         if(j==-1) throw new EmployeesException("Нельзя уволить сотрудника! Он не работает тут..");
         for(int i = 0; i < numberOfEmployees-1; i++){

@@ -62,7 +62,7 @@ public abstract class Human  {
     }
 
     public void moveException(String s) throws MovingException{
-        if(s.isEmpty()==false){
+        if(!s.isEmpty()){
             throw new MovingException("Объект уже находится в пути");
         }
     }
@@ -82,9 +82,6 @@ public abstract class Human  {
         return job;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
     @Override
     public String toString() {
         return  name;

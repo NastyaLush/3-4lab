@@ -41,10 +41,7 @@ public abstract class ResearchHuman extends Human implements Engineer {
         return name;
     }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public int getNumberOfInnovations() {
         return numberOfInnovations;
