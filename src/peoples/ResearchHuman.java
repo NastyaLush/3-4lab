@@ -1,23 +1,10 @@
 package peoples;
 
-public abstract class ResearchTeam extends Human implements Engineer {
-    private String name = "Группа исследователей";
-    private String purpose = "Цели нет";
-    private int numbers;
+public abstract class ResearchHuman extends Human implements Engineer {
+    private String name;
     private String[] innovations ;
     private int numberOfInnovations=0;
-    public ResearchTeam(){}
-    ResearchTeam(String name){
-        this.name=name;
-    }
-    ResearchTeam(String name, int numbers){
-        this.name=name;
-        this.numbers=numbers;
-    }
-    ResearchTeam(String name,String purpose){
-        this.name=name;
-        this.purpose=purpose;
-    }
+    private double imoganation;
 
     public String researching(String mindProcess){
         if (condition.isEmpty()) {
@@ -36,21 +23,22 @@ public abstract class ResearchTeam extends Human implements Engineer {
     }
 
     public  String watch(String object, String thoughts){
-        if(Math.random()<0.78){
-            return name+" наблюдали за"+ object+" и эти мысли помогли им создать что-то новое: "+thoughts;
+        if(Math.random()<imoganation){
+            return name+" наблюдал(и) за"+ object+" и эти мысли помогли им создать что-то новое: "+thoughts;
         }
         else return name+"не повезло, новых идей не возникло";
     }
 
-    public String getPurpose() {
-        return purpose;
-    }
-
-    public int getNumbers() {
-        return numbers;
-    }
-
     public String[] getInnovations() {
         return innovations;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public int getNumberOfInnovations() {
+        return numberOfInnovations;
     }
 }
