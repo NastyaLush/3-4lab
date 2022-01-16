@@ -9,12 +9,14 @@ public class KikuoIbe extends ResearchHuman implements Engineer {
     private double imoganation=0.9;
     private int numberOfInnovations = 0;
 
-    private KikuoIbe(){}
-    private static KikuoIbe holder;
     public static KikuoIbe getInstance(){
         if(holder == null) holder = new KikuoIbe();
         return holder;
+
     }
+    private KikuoIbe(){super("Кикуо Ибэ");}
+    private static KikuoIbe holder;
+
 
 
     public class ProjectTeamTough extends ResearchHuman{
