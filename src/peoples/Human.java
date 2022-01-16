@@ -12,9 +12,15 @@ public abstract class Human extends Exceptions {
     Human(){}
     Human(String name){this.name=name;}
     enum Locaton{
-        CASIO_FACTORY,
-        HOME,
-        ITMO
+        CASIO_FACTORY("Casio factory"),
+        HOME("home"),
+        ITMO("ITMO");
+
+        private String name;
+        Locaton(String name){this.name=name;}
+        public String toString(){
+            return name;
+        }
     }
     public String goToWork( Locaton locaton ){
     try {
