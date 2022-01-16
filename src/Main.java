@@ -9,5 +9,7 @@ public class Main {
         System.out.println(casioFactory.getNumberOfEmployees());
         casioFactory.deleteEmployee(kikuoIbe);
         System.out.println(casioFactory.getNumberOfEmployees());
+        casioFactory.deleteEmployee(kikuoIbe);
+        System.out.println(casioFactory.getNumberOfEmployees());
     }
 }

@@ -1,5 +1,6 @@
 package factory;
 
+import exception.EmployeesException;
 import peoples.Human;
 import watches.CasioGShock;
 
@@ -15,8 +16,13 @@ public class CasioFactory implements Factory, CasioGShockProduction{
         numberOfEmployees++;
     }
     public void deleteEmployee(Human employee){
+        if(numberOfEmployees == 0) throw new EmployeesException("Нельзя уволить сотрудника! Он не работает тут..");
         Human[] newEmployees = new Human[numberOfEmployees-1];
-        int j = 0;
+        int j = -1;
+        for(Human e:employees){
+            if(employee.equals(employee)) j++;
+        }
+        if(j==-1) throw new EmployeesException("Нельзя уволить сотрудника! Он не работает тут..");
         for(int i = 0; i < numberOfEmployees-1; i++){
             if(employees[i].equals(employee)) {
                 j++;
