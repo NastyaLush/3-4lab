@@ -15,8 +15,14 @@ public class KikuoIbe extends Human implements Engineer {
         if(holder == null) holder = new KikuoIbe();
         return holder;
     }
-// ловить ошибку если уже работает
+
     public String getAJobICasioFactory(CasioFactory casioFactory){
+
+        for (Human employee: casioFactory.getEmployees()) {
+            if (employee == this) {
+                return name + "уже работает на фабрике Casio";
+            }
+        }
         casioFactory.addEmployee(this);
         return name + " теперь работает на фабрике Casio";
     }

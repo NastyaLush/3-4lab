@@ -16,4 +16,12 @@ public class CasioFactory {
     public String toString(){
         return "Фабрика Casio";
     }
+
+    public Human[] getEmployees() {
+        return employees;
+    }
+
+    public int getNumberOfEmployees() {
+        return numberOfEmployees;
+    }
 }
