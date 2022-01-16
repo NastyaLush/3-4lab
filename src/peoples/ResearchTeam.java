@@ -30,7 +30,7 @@ public class ResearchTeam extends Human implements Engineer {
     }
 // то что они придумали должно как-то отражаться
     public  String watch(String object, String thoughts){
-        if(Math.random()%(100-numbers)==0){
+        if(Math.random()<0.78){
             return name+" наблюдали за"+ object+" и эти мысли помогли им создать что-то новое: "+thoughts;
         }
         else return name+"не повезло, новых идей не возникло";

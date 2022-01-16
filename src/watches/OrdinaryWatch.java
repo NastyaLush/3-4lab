@@ -15,6 +15,7 @@ public class OrdinaryWatch implements Watch{
     public Human getOwner(){
         return owner;
     }
+    // предупредить о смене владельца и это должно отбражаться на владельце
     public void changeOwner(Human newOwner){
         this.owner = newOwner;
     }

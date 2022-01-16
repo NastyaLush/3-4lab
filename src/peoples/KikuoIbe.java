@@ -9,7 +9,7 @@ public class KikuoIbe extends Human implements Engineer {
     private int numberOfInnovations = 0;
     private KikuoIbe(){
         super(name);
-    };
+    }
     private static KikuoIbe holder;
     public static KikuoIbe getInstance(){
         if(holder == null) holder = new KikuoIbe();
@@ -31,7 +31,7 @@ public class KikuoIbe extends Human implements Engineer {
     }
     //должно отразиться изобретение, мб массив изобретений????
     public String watch(String object, String innovation){
-        if(Math.random()%4==0){
+        if(Math.random()<0.95){
             createInnovation(innovation);
             return name+" наблюдал за"+ object+" и эти мысли помогли им создать что-то новое: "+innovation;
         }
