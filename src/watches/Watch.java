@@ -1,6 +1,7 @@
 package watches;
 
 import exception.BrokenWatchesException;
+import objects.Innovation;
 import objects.Ownable;
 
 public abstract class Watch implements Ownable {

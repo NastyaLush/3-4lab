@@ -35,7 +35,7 @@ public class CasioFactory implements Factory, CasioGShockProduction{
         numberOfEmployees--;
     }
     public CasioGShock makeCasioGShock(){
-        return CasioGShock.createCasioGShockInstance();
+        return CasioGShock.getInstanse();
     }
 
     public String toString(){

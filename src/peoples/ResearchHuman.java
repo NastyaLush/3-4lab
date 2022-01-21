@@ -1,8 +1,12 @@
 package peoples;
 
+import objects.Innovation;
+
+import java.util.ArrayList;
+
 public abstract class ResearchHuman extends Human implements Engineer {
 
-    private String[] innovations ;
+    private ArrayList<Innovation> innovations = new ArrayList<Innovation>();
     private int numberOfInnovations=0;
     private double imoganation;
 
@@ -19,9 +23,8 @@ public abstract class ResearchHuman extends Human implements Engineer {
             return "состояние изменилось: " + name + " в поиске решений";
         }
     }
-    public String createInnovation(String innovation){
-        innovations[numberOfInnovations]=innovation;
-        numberOfInnovations++;
+    public String createInnovation(Innovation innovation){
+        innovations.add(innovation);
         return "создан "+ innovation;
     }
 
@@ -32,8 +35,12 @@ public abstract class ResearchHuman extends Human implements Engineer {
         else return name+ " не повезло, новых идей не возникло";
     }
 
-    public String[] getInnovations() {
-        return innovations;
+    public String getInnovations() {
+        String a = "Инновации, которые придумал " + name;
+        for(Innovation i: innovations){
+            i.toString();
+        }
+        return a;
     }
 
     @Override

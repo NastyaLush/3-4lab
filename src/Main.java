@@ -1,3 +1,4 @@
+import exception.NotRealesedWatchModelException;
 import factory.CasioFactory;
 import objects.Ownable;
 import peoples.FatherIbe;
@@ -30,7 +31,12 @@ public class Main {
         System.out.println(kikuoIbe.projectTeamTough.researching());
         System.out.println(kikuoIbe.watch("резиновый мяч", "амортизация корпуса часов"));
 
-
-        CasioGShock firstModelCasio = new CasioGShock(kikuoIbe, 1983);
+        try {
+            CasioGShock casioGShock1 = casioFactory.makeCasioGShock();
+            CasioGShock.realiseInnovation();
+            CasioGShock casioGShock = casioFactory.makeCasioGShock();
+        }catch (NotRealesedWatchModelException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

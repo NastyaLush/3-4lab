@@ -1,6 +1,6 @@
 package peoples;
 
-public class KikuoIbe extends ResearchHuman implements Engineer {
+public class KikuoIbe extends ResearchHuman  {
 
     public static ProjectTeamTough projectTeamTough;
     private static KikuoIbe holder;

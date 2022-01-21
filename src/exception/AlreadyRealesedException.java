@@ -1,8 +1,8 @@
 package exception;
 
-public class AlreadyRealesedWatchException extends RuntimeException{
+public class AlreadyRealesedException extends RuntimeException{
     private String message;
-    public AlreadyRealesedWatchException(String message){
+    public AlreadyRealesedException(String message){
         super(message);
         this.message = message;
     }
