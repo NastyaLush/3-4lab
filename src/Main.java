@@ -1,4 +1,5 @@
 import factory.CasioFactory;
+import objects.Ownable;
 import peoples.FatherIbe;
 import peoples.Human;
 import peoples.KikuoIbe;
@@ -11,8 +12,12 @@ public class Main {
         CasioFactory casioFactory = new CasioFactory();
         KikuoIbe kikuoIbe = KikuoIbe.getInstance();
         FatherIbe fatherIbe = FatherIbe.createFatherIbe();
-        OrdinaryWatch ordinaryWatch= new OrdinaryWatch(fatherIbe);
-        fatherIbe.giftWatch(ordinaryWatch, kikuoIbe);
+        OrdinaryWatch ordinaryWatch= new OrdinaryWatch();
+        fatherIbe.buySonething(ordinaryWatch);
+        System.out.println(fatherIbe.getHavings());
+        fatherIbe.giveAGift(ordinaryWatch, kikuoIbe);
+        System.out.println(fatherIbe.getHavings());
+        System.out.println(kikuoIbe.getHavings());
 
         kikuoIbe.getAJobICasioFactory(casioFactory);
         System.out.println(kikuoIbe.goToWork());

@@ -1,28 +1,11 @@
 package watches;
 
-import peoples.Human;
-
-public class OrdinaryWatch implements Watch{
-    private Human owner;
-    private Condition condition = Condition.SERVICEABLE;
+public class OrdinaryWatch extends Watch{
     private final static int impactResistance = 30;
-
-    public OrdinaryWatch(Human owner){
-        this.owner = owner;
+    public OrdinaryWatch(){
+        super(impactResistance);
     }
-    public Condition getCondition() {
-        return condition;
-    }
-    public Human getOwner(){
-        return owner;
-    }
-    public void changeOwner(Human newOwner){
-        this.owner = newOwner;
-    }
-    public int getImpactResistance(){
-        return impactResistance;
-    }
-    public void changeCondition(Condition condition){
-        this.condition = condition;
+    public String toString(){
+        return "Обычные часы";
     }
 }

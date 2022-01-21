@@ -1,14 +1,24 @@
 package watches;
 
 import exception.BrokenWatchesException;
+import objects.Ownable;
 
-public interface Watch {
-    Condition getCondition();
-    int getImpactResistance();
-    void changeCondition(Condition condition);
-
-
-    default String showTime() throws BrokenWatchesException {
+public abstract class Watch implements Ownable {
+    private Condition condition = Condition.SERVICEABLE;
+    private int impactResistance;
+    public Watch(int impactResistance){
+        this.impactResistance = impactResistance;
+    }
+    public Condition getCondition() {
+        return condition;
+    }
+    public int getImpactResistance(){
+        return impactResistance;
+    }
+    public void changeCondition(Condition condition){
+        this.condition = condition;
+    }
+    public String showTime() throws BrokenWatchesException {
         if(this.getCondition().equals(Condition.SERVICEABLE)) {
             class Time {
                 private long currentMinute = (System.currentTimeMillis() / 60000) % 60;
@@ -21,11 +31,9 @@ public interface Watch {
         }
         else throw new BrokenWatchesException("Упс! Часы сломаны и время не показывают!");
     }
-
-    default void getHit(){
+    public void getHit(){
         if(Math.random() >= this.getImpactResistance()/100) this.changeCondition(Condition.FAULTY);
     }
-
     enum Condition{
         SERVICEABLE("исправны"),
         FAULTY("неисправны");

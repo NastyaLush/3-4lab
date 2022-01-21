@@ -11,7 +11,4 @@ public class FatherIbe extends Human {
         if(objectHolder == null) objectHolder = new FatherIbe();
         return objectHolder;
     }
-    public void giftWatch(OrdinaryWatch watch, Human toWho){
-        watch.changeOwner(toWho);
-    }
 }

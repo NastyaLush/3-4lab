@@ -1,13 +1,17 @@
 package peoples;
 import exception.MovingException;
 import factory.CasioFactory;
+import objects.Ownable;
 import watches.OrdinaryWatch;
+
+import java.util.ArrayList;
 
 public abstract class Human  {
     protected String name= new String();
     private String moving= new String();
     private String job;
     protected String condition= new String();
+    private ArrayList<Ownable> havings = new ArrayList<Ownable>();
 
     public Human(){}
     public Human(String name){ this.name=name;}
@@ -21,6 +25,25 @@ public abstract class Human  {
         public String toString(){
             return name;
         }
+    }
+    private void getAGift(Ownable gift){
+        havings.add(gift);
+    }
+    public void giveAGift(Ownable gift, Human person){
+        if(havings.contains(gift)) {
+            havings.remove(gift);
+            person.getAGift(gift);
+        }
+    }
+    public void buySonething(Ownable thing){
+        havings.add(thing);
+    }
+    public String getHavings(){
+        String a = "Имущество " + this.getName() + " на данный момент:";
+        for(Ownable o:havings){
+            a = a + "\n" + o.toString();
+        }
+        return a;
     }
     public void getAJobICasioFactory(CasioFactory casioFactory){
         casioFactory.addEmployee(Human.this);
