@@ -4,6 +4,7 @@ import objects.Ownable;
 import peoples.FatherIbe;
 import peoples.Human;
 import peoples.KikuoIbe;
+import watches.BrokenWatchesException;
 import watches.CasioGShock;
 import watches.OrdinaryWatch;
 
@@ -25,6 +26,12 @@ public class Main {
         System.out.println(kikuoIbe.dropWatch(ordinaryWatch));
         System.out.println(ordinaryWatch.getCondition());
 
+        try{
+            System.out.println(ordinaryWatch.showTime());
+        } catch (BrokenWatchesException e){
+            e.printMessage();
+        }
+
         System.out.println(kikuoIbe.createProjectTeam());
         System.out.println(kikuoIbe.projectTeamTough.getPurpose());
 
@@ -36,7 +43,8 @@ public class Main {
             CasioGShock.realiseInnovation();
             CasioGShock casioGShock = casioFactory.makeCasioGShock();
         }catch (NotRealesedWatchModelException e){
-            System.out.println(e.getMessage());
+            System.out.println("\u001B[34m" + e.getMessage()+"\u001B[0m");
+            System.err.println(e.getMessage());
         }
     }
 }
